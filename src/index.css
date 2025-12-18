@@ -372,3 +372,58 @@
 .animate-scan {
   animation: scan 1.5s linear infinite;
 }
+@layer utilities {
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-150%) skewX(-20deg); }
+    100% { transform: translateX(150%) skewX(-20deg); }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s infinite;
+  }
+
+  
+}
+
+@layer utilities {
+  @keyframes vertical-train {
+    0% { 
+      transform: translateY(-100%); 
+      opacity: 0; 
+    }
+    20% { 
+      opacity: 0.8; /* Increased visibility */
+    }
+    80% { 
+      opacity: 0.8; 
+    }
+    100% { 
+      transform: translateY(100vh); 
+      opacity: 0; 
+    }
+  }
+
+  .animate-train {
+    animation: vertical-train 10s linear infinite;
+  }
+}
+@layer utilities {
+  @keyframes matrix-rain {
+    0% { 
+      transform: translateY(-100%);
+    opacity: 0.8; }
+    50%{
+      transform: translateY(-100%);
+    opacity: 1;
+    }
+    100% { 
+      transform: translateY(100%);
+    opacity: 0.8; }
+  }
+
+  .animate-matrix-rain {
+    /* No delay, linear movement for that constant 'train' look */
+    animation: matrix-rain 5s linear infinite;
+  }
+}
